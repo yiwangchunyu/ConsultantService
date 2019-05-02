@@ -9,7 +9,7 @@ class User(models.Model):
     phone = models.CharField(max_length=20,default='')
     gender = models.IntegerField(default=1)
     password = models.CharField(max_length=100)
-    avatar = models.CharField(max_length=200,default='http://consultant.yiwangchunyu.wang/meida/system/avatar.jpg')
+    avatar = models.CharField(max_length=200,default='http://consultant.yiwangchunyu.wang/media/system/avatar.jpg')
     status = models.IntegerField(default=1)
     ctime = models.DateTimeField(default = timezone.now)
     mtime = models.DateTimeField(auto_now=True)
