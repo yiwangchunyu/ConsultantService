@@ -1,0 +1,9 @@
+templates
+db.sqlite3
+**/__pycache__
+.idea
+media/*
+!media/system/*
+static
+**/migrations/*
+config.json
