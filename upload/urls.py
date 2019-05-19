@@ -23,4 +23,5 @@ from upload import views
 urlpatterns = [
     re_path(r'^uploadImage$', views.uploadImage),
     re_path(r'^uploadAvatar$', views.uploadAvatar),
+    re_path(r'^uploadDisImg$', views.uploadDisImg),
 ]
