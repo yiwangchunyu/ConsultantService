@@ -24,4 +24,5 @@ urlpatterns = [
     re_path(r'^uploadImage$', views.uploadImage),
     re_path(r'^uploadAvatar$', views.uploadAvatar),
     re_path(r'^uploadDisImg$', views.uploadDisImg),
+    re_path(r'^uploadDiaryImg$', views.uploadDiaryImg),
 ]
