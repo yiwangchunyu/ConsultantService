@@ -1,3 +1,4 @@
+import datetime
 import json
 import traceback
 
@@ -9,6 +10,15 @@ from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 
 from diary.models import Diary
+week_day_dict = {
+    0 : '星期一',
+    1 : '星期二',
+    2 : '星期三',
+    3 : '星期四',
+    4 : '星期五',
+    5 : '星期六',
+    6 : '星期天',
+  }
 
 
 @csrf_exempt
@@ -49,6 +59,7 @@ def list(request):
             data_row['id']=diary['pk']
             data_row['images']=json.loads(data_row['images'])
             data_row['ctime']=data_row['ctime'].replace('T',' ')[:-4]
+            data_row['ctime_weekday']=week_day_dict[datetime.datetime.strptime(data_row['ctime'], "%Y-%m-%d %H:%M:%S").weekday()]
             data_row['mtime'] = data_row['mtime'].replace('T',' ')[:-4]
             del data_row['status']
             res['data']['diary'].append(data_row)
